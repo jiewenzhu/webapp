@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-06-08 14:21:18
- * @LastEditors: zhujiewen 948226125@qq.com
- * @LastEditTime: 2023-06-08 14:22:31
+ * @LastEditors: z_jw96 948226125@qq.com
+ * @LastEditTime: 2023-06-08 19:08:38
  * @FilePath: /webapp/src/App.vue
 -->
 <template>
@@ -13,11 +13,16 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
-
+import axios from 'axios';
 export default {
   name: 'App',
   components: {
     HelloWorld,
+  },
+  mounted() {
+    axios.get('/api', { params: {} }).then((res) => {
+      console.log(res);
+    });
   },
 };
 </script>
